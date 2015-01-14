@@ -15,6 +15,8 @@ $ cd wrengo-latest-dev-darwin-amd64
 $ ./wrengo --version
 ```
 
+Or just download [the latest dev release](https://github.com/hazbo/wrengo/releases/download/latest/wrengo-latest-dev-darwin-amd64.tar.gz).
+
 Running: `./wrengo run file.wren`
 
 #### Building from source
