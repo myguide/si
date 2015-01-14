@@ -1,0 +1,7 @@
+---
+# Asink build file
+tasks:
+  make-wrengo:
+    env:
+      - GOPATH=$PWD/vendor
+    command: make
