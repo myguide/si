@@ -54,7 +54,8 @@ func NewVM() VM {
     }
 }
 
-func (m VM) Interpret() {
+// Interpret interprets the Wren script
+func (m VM) interpret() {
     c := C.interpret(
         m.Wren,
         C.CString(m.Script.Filename),
@@ -63,4 +64,40 @@ func (m VM) Interpret() {
     if c == 0 {
         // Success!
     }
+}
+
+// wrenGetArgumentDouble is the Go binding for the
+// C implementation of wrenGetArgumentDouble
+func wrenGetArgumentDouble(vm *C.WrenVM, index int) int {
+    return int(C.wrenGetArgumentDouble(vm, C.int(index)))
+}
+
+// wrenGetArgumentString is the Go binding for the
+// C implementation of wrenGetArgumentString
+func wrenGetArgumentString(vm *C.WrenVM, index int) string {
+    return C.GoString(C.wrenGetArgumentString(vm, C.int(index)))
+}
+
+// wrenGetArgumentBool is the Go binding for the
+// C implementation of wrenGetArgumentBool
+func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
+    return bool(C.wrenGetArgumentBool(vm, C.int(index)))
+}
+
+// wrenReturnDouble is the Go binding for the
+// C implementation of wrenReturnDouble
+func wrenReturnDouble(vm *C.WrenVM, value int) {
+    C.wrenReturnDouble(vm, C.double(value))
+}
+
+// wrenReturnString is the Go binding for the
+// C implementation of wrenReturnString
+func wrenReturnString(vm *C.WrenVM, value string) {
+    C.wrenReturnString(vm, C.CString(value), -1)
+}
+
+// wrenReturnBool is the Go binding for the
+// C implementation of wrenReturnBool
+func wrenReturnBool(vm *C.WrenVM, value bool) {
+    C.wrenReturnBool(vm, C._Bool(value))
 }

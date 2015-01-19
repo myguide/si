@@ -140,11 +140,11 @@ type _bintree_t struct {
 var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 	"src": &_bintree_t{nil, map[string]*_bintree_t{
 		"api": &_bintree_t{nil, map[string]*_bintree_t{
-			"markdown.wren": &_bintree_t{src_api_markdown_wren, map[string]*_bintree_t{
-			}},
 			"file.wren": &_bintree_t{src_api_file_wren, map[string]*_bintree_t{
 			}},
 			"main.wren": &_bintree_t{src_api_main_wren, map[string]*_bintree_t{
+			}},
+			"markdown.wren": &_bintree_t{src_api_markdown_wren, map[string]*_bintree_t{
 			}},
 		}},
 	}},
