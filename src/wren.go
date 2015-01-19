@@ -71,6 +71,14 @@ func class_markdown_parse(vm *C.WrenVM) {
     C.wrenReturnString(vm, C.CString(r), -1)
 }
 
+//export class_file_exists
+func class_file_exists(vm *C.WrenVM) {
+    f := class.NewFile()
+    filename := C.wrenGetArgumentString(vm, 1)
+    r := f.Exists(C.GoString(filename))
+    C.wrenReturnBool(vm, C._Bool(r))
+}
+
 //export class_file_read
 func class_file_read(vm *C.WrenVM) {
     f := class.NewFile()

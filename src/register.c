@@ -17,6 +17,7 @@
 void register_classes(WrenVM *vm)
 {
     // File
+    wrenDefineMethod(vm, "BaseFile", "Exists", 1, class_file_exists);
     wrenDefineMethod(vm, "BaseFile", "Read", 1, class_file_read);
     wrenDefineMethod(vm, "BaseFile", "Write", 3, class_file_write);
 

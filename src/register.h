@@ -18,6 +18,7 @@
 #include <wren.h>
 
 // File
+extern void class_file_exists(WrenVM *vm);
 extern void class_file_read(WrenVM *vm);
 extern void class_file_write(WrenVM *vm);
 

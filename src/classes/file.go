@@ -22,12 +22,23 @@ import (
 // File represents a file that the user could either
 // be reading from or writing to.
 type File struct {
-
+	path string
 }
 
 // NewFile returns an empty instance of File
 func NewFile() File {
 	return File{}
+}
+
+// Exists checks to see if a file exists, if so
+// returns true and assigns the path of File
+// with the path found.
+func (f *File) Exists(filename string) bool {
+	if _, err := os.Stat(filename); err == nil {
+		f.path = filename
+		return true
+	}
+	return false
 }
 
 // Read reads a file and returns the contents as a string.
