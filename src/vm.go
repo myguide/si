@@ -13,11 +13,12 @@
 // file that was distributed with this source code.
 
 package main
-
-// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/include
+// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
 // #cgo LDFLAGS: -L. wren/libwren.a
+//
 // #include <wren.h>
 // #include "register.h"
+//
 // static inline WrenVM* createVM() {
 //   WrenConfiguration config = {
 //     .reallocateFn = NULL,
@@ -80,9 +81,9 @@ func wrenGetArgumentString(vm *C.WrenVM, index int) string {
 
 // wrenGetArgumentBool is the Go binding for the
 // C implementation of wrenGetArgumentBool
-func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
-    return bool(C.wrenGetArgumentBool(vm, C.int(index)))
-}
+//func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
+//    return bool(bool(C.wrenGetArgumentBool(vm, C.int(index))))
+//}
 
 // wrenReturnDouble is the Go binding for the
 // C implementation of wrenReturnDouble

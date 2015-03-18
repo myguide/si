@@ -14,7 +14,7 @@
 
 package main
 
-// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/include
+// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
 // #cgo LDFLAGS: -L. wren/libwren.a
 // #include <wren.h>
 import "C"
@@ -58,12 +58,6 @@ func main() {
     }
 
     app.Run(os.Args)
-}
-
-//export class_test
-func class_test(vm *C.WrenVM) {
-    b := wrenGetArgumentBool(vm, 1)
-    wrenReturnBool(vm, b)
 }
 
 //export class_markdown_parse

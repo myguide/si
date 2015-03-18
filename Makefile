@@ -8,7 +8,7 @@ all: wrengo
 
 wrengo: deps wren bindata
 	mkdir -p build
-	cd src && go build -o ../${BUILD_DIR}/${APPLICATION} -v
+	cd src && go build -x -o ../${BUILD_DIR}/${APPLICATION} -v
 
 # Build wren
 wren:

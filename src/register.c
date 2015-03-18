@@ -17,10 +17,10 @@
 void register_classes(WrenVM *vm)
 {
     // File
-    wrenDefineMethod(vm, "BaseFile", "Exists", 1, class_file_exists);
-    wrenDefineMethod(vm, "BaseFile", "Read", 1, class_file_read);
-    wrenDefineMethod(vm, "BaseFile", "Write", 3, class_file_write);
+    wrenDefineMethod(vm, "BaseFile", "Exists(_)", class_file_exists);
+    wrenDefineMethod(vm, "BaseFile", "Read(_)", class_file_read);
+    wrenDefineMethod(vm, "BaseFile", "Write(_,_,_)", class_file_write);
 
     // Markdown
-    wrenDefineMethod(vm, "BaseMarkdown", "Parse", 1, class_markdown_parse);
+    wrenDefineMethod(vm, "BaseMarkdown", "Parse(_)", class_markdown_parse);
 }
