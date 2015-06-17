@@ -9,4 +9,4 @@
 	url = https://github.com/hazbo/cli.git
 [submodule "src/wren"]
 	path = src/wren
-	url = https://github.com/hazbo/wren.git
+	url = https://github.com/munificent/wren.git
