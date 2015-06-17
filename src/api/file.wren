@@ -1,14 +1,5 @@
-/*class File is BaseFile {
-    new {
-
-    }
-
-    Read(filename) {
-        return super.Read(filename)
-    }
-
-    Write(filename, data, perm) {
-        return super.Write(filename, data, perm)
-    }
+class File {
+    foreign Read(filename)
+    foreign Write(filename, data, perm)
+    foreign Exists(filename)
 }
-*/

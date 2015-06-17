@@ -13,7 +13,7 @@
 // file that was distributed with this source code.
 
 package main
-// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
+// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include -I./wren/src/vm
 // #cgo LDFLAGS: -L. wren/lib/libwren.a
 //
 // #include <wren.h>
@@ -26,11 +26,11 @@ package main
 //     .minHeapSize = 0,
 //     .initialHeapSize = 1024 * 1024 * 100
 //   };
+//   config.bindForeignMethodFn = findForeignMethods;
 //   return wrenNewVM(&config);
 // }
 // 
 // static inline int interpret(WrenVM *vm, char *path, char *src) {
-//   //register_classes(vm);
 //   int c = 0;
 //   switch(wrenInterpret(vm, path, src)) {
 //     case WREN_RESULT_SUCCESS: c = 0; break;
@@ -87,7 +87,7 @@ func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
 
 // wrenReturnDouble is the Go binding for the
 // C implementation of wrenReturnDouble
-func wrenReturnDouble(vm *C.WrenVM, value int) {
+func wrenReturnDouble(vm *C.WrenVM, value float64) {
     C.wrenReturnDouble(vm, C.double(value))
 }
 

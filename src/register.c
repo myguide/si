@@ -14,61 +14,26 @@
 
 #include <string.h>
 #include "register.h"
-#include "return_double.h"
-#include "wren.h"
 
-#define REGISTER_TEST(name) \
-  if (strcmp(testName, #name) == 0) return name##BindForeign(fullName)
-
-const char* testName;
-
-
-static WrenForeignMethodFn bindForeign(
-    WrenVM* vm, const char* module, const char* className,
-    bool isStatic, const char* signature)
+WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
+  const char* className, bool isStatic, const char* signature )
 {
-  if (strcmp(module, "main") != 0) return NULL;
-
-  // For convenience, concatenate all of the method qualifiers into a single
-  // signature string.
-  char fullName[256];
-  fullName[0] = '\0';
-  if (isStatic) strcat(fullName, "static ");
-  strcat(fullName, className);
-  strcat(fullName, ".");
-  strcat(fullName, signature);
-
-  REGISTER_TEST(return_double);
-
-  exit(1);
+  if ( strcmp( className, "Markdown" ) == 0 ) {
+    if ( strcmp( signature, "Parse(_)" ) == 0 ) {
+      return class_markdown_parse;
+    }
+  }
+  if ( strcmp( className, "File" ) == 0 ) {
+    if ( strcmp( signature, "Exists(_)" ) == 0 ) {
+      return class_file_exists;
+    }
+    if ( strcmp( signature, "Read(_)" ) == 0 ) {
+      return class_file_read;
+    }
+    if ( strcmp( signature, "Write(_,_,_)" ) == 0 ) {
+      return class_file_write;
+    }
+  }
   return NULL;
 }
 
-
-
-/*
-void register_classes(WrenVM *vm)
-{
-
-    // File
-    //wrenDefineMethod(vm, "BaseFile", "Exists(_)", class_file_exists);
-    //wrenDefineMethod(vm, "BaseFile", "Read(_)", class_file_read);
-    //wrenDefineMethod(vm, "BaseFile", "Write(_,_,_)", class_file_write);
-
-    // Markdown
-    //wrenDefineMethod(vm, "BaseMarkdown", "Parse(_)", class_markdown_parse);
-}
-*/
-
-
-static void returnFloat(WrenVM* vm)
-{
-  wrenReturnDouble(vm, 123.456);
-}
-
-WrenForeignMethodFn return_doubleBindForeign(const char* signature)
-{
-  if (strcmp(signature, "static Api.returnFloat") == 0) return returnFloat;
-
-  return NULL;
-}
