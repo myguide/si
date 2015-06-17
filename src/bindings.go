@@ -13,7 +13,7 @@
 // file that was distributed with this source code.
 
 package main
-// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include -I./wren/src/vm
+// #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
 // #cgo LDFLAGS: -L. wren/lib/libwren.a
 //
 // #include <wren.h>

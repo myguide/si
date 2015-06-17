@@ -81,26 +81,6 @@ func src_api_file_wren() (*asset, error) {
 	return a, nil
 }
 
-var _src_api_main_wren = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\xe2\xd2\xd7\xcf\x4d\xcc\xcc\xd3\x4b\x4e\xcc\xc9\xe1\x02\x04\x00\x00\xff\xff\x7f\x8f\x38\x39\x0d\x00\x00\x00")
-
-func src_api_main_wren_bytes() ([]byte, error) {
-	return bindata_read(
-		_src_api_main_wren,
-		"src/api/main.wren",
-	)
-}
-
-func src_api_main_wren() (*asset, error) {
-	bytes, err := src_api_main_wren_bytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindata_file_info{name: "src/api/main.wren", size: 13, mode: os.FileMode(420), modTime: time.Unix(1434573529, 0)}
-	a := &asset{bytes: bytes, info:  info}
-	return a, nil
-}
-
 var _src_api_markdown_wren = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x4a\xce\x49\x2c\x2e\x56\xf0\x4d\x2c\xca\x4e\xc9\x2f\xcf\x53\xa8\xe6\x52\x00\x82\xb4\xfc\xa2\xd4\xcc\xf4\x3c\x85\x80\xc4\xa2\xe2\x54\x8d\x5c\xa8\xa4\x26\x57\x2d\x17\x20\x00\x00\xff\xff\x56\x31\x83\x07\x2f\x00\x00\x00")
 
 func src_api_markdown_wren_bytes() ([]byte, error) {
@@ -163,7 +143,6 @@ func AssetNames() []string {
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
 	"src/api/file.wren": src_api_file_wren,
-	"src/api/main.wren": src_api_main_wren,
 	"src/api/markdown.wren": src_api_markdown_wren,
 }
 
@@ -210,8 +189,6 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 	"src": &_bintree_t{nil, map[string]*_bintree_t{
 		"api": &_bintree_t{nil, map[string]*_bintree_t{
 			"file.wren": &_bintree_t{src_api_file_wren, map[string]*_bintree_t{
-			}},
-			"main.wren": &_bintree_t{src_api_main_wren, map[string]*_bintree_t{
 			}},
 			"markdown.wren": &_bintree_t{src_api_markdown_wren, map[string]*_bintree_t{
 			}},
