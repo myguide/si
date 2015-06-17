@@ -1,4 +1,4 @@
-class Markdown is BaseMarkdown {
+/*class Markdown is BaseMarkdown {
     markdown { _markdown }
     parsed   { _parsed }
 
@@ -16,4 +16,4 @@ class Markdown is BaseMarkdown {
     ParseFile(path) {
         // Implement this!
     }
-}
+}*/

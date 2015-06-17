@@ -15,7 +15,7 @@
 package main
 
 // #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
-// #cgo LDFLAGS: -L. wren/libwren.a
+// #cgo LDFLAGS: -L. wren/lib/libwren.a
 // #include <wren.h>
 import "C"
 
@@ -48,8 +48,9 @@ func main() {
                 vm := NewVM()
                 vm.Script = s
                 vm.Script.readApi([]string{
-                    "src/api/file.wren",
-                    "src/api/markdown.wren",
+                    //"src/api/file.wren",
+                    //"src/api/markdown.wren",
+                    "src/api/double.wren",
                 })
                 vm.Script.initApiMain()
                 vm.interpret()

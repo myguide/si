@@ -18,13 +18,15 @@
 #include <wren.h>
 
 // File
-extern void class_file_exists(WrenVM *vm);
-extern void class_file_read(WrenVM *vm);
-extern void class_file_write(WrenVM *vm);
+//extern void class_file_exists(WrenVM *vm);
+//extern void class_file_read(WrenVM *vm);
+//extern void class_file_write(WrenVM *vm);
 
 // Markdown
-extern void class_markdown_parse(WrenVM *vm);
+//extern void class_markdown_parse(WrenVM *vm);
 
-void register_classes(WrenVM *vm);
+//void register_classes(WrenVM *vm);
+
+WrenForeignMethodFn return_doubleBindForeign(const char* signature);
 
 #endif

@@ -14,7 +14,7 @@
 
 package main
 // #cgo CFLAGS: -std=c99 -Wall -Werror -I./wren/src/include
-// #cgo LDFLAGS: -L. wren/libwren.a
+// #cgo LDFLAGS: -L. wren/lib/libwren.a
 //
 // #include <wren.h>
 // #include "register.h"
@@ -30,7 +30,7 @@ package main
 // }
 // 
 // static inline int interpret(WrenVM *vm, char *path, char *src) {
-//   register_classes(vm);
+//   //register_classes(vm);
 //   int c = 0;
 //   switch(wrenInterpret(vm, path, src)) {
 //     case WREN_RESULT_SUCCESS: c = 0; break;
@@ -81,9 +81,9 @@ func wrenGetArgumentString(vm *C.WrenVM, index int) string {
 
 // wrenGetArgumentBool is the Go binding for the
 // C implementation of wrenGetArgumentBool
-//func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
-//    return bool(bool(C.wrenGetArgumentBool(vm, C.int(index))))
-//}
+func wrenGetArgumentBool(vm *C.WrenVM, index int) bool {
+    return bool(bool(C.wrenGetArgumentBool(vm, C.int(index))))
+}
 
 // wrenReturnDouble is the Go binding for the
 // C implementation of wrenReturnDouble

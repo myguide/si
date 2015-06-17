@@ -1,4 +1,4 @@
-class File is BaseFile {
+/*class File is BaseFile {
     new {
 
     }
@@ -11,3 +11,4 @@ class File is BaseFile {
         return super.Write(filename, data, perm)
     }
 }
+*/
