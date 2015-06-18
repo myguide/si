@@ -6,11 +6,6 @@ import (
 	"fmt"
 	"io"
 	"strings"
-	"os"
-	"time"
-	"io/ioutil"
-	"path"
-	"path/filepath"
 )
 
 func bindata_read(data []byte, name string) ([]byte, error) {
@@ -30,75 +25,32 @@ func bindata_read(data []byte, name string) ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-type asset struct {
-	bytes []byte
-	info  os.FileInfo
-}
-
-type bindata_file_info struct {
-	name string
-	size int64
-	mode os.FileMode
-	modTime time.Time
-}
-
-func (fi bindata_file_info) Name() string {
-	return fi.name
-}
-func (fi bindata_file_info) Size() int64 {
-	return fi.size
-}
-func (fi bindata_file_info) Mode() os.FileMode {
-	return fi.mode
-}
-func (fi bindata_file_info) ModTime() time.Time {
-	return fi.modTime
-}
-func (fi bindata_file_info) IsDir() bool {
-	return false
-}
-func (fi bindata_file_info) Sys() interface{} {
-	return nil
-}
-
-var _src_api_file_wren = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x4a\xce\x49\x2c\x2e\x56\x70\xcb\xcc\x49\x55\xa8\xe6\x52\x00\x82\xb4\xfc\xa2\xd4\xcc\xf4\x3c\x85\xa0\xd4\xc4\x14\x8d\x34\xa0\x78\x5e\x62\x6e\xaa\x26\x8a\x54\x78\x51\x66\x49\x2a\x5c\x4e\x47\x21\x25\xb1\x24\x51\x47\xa1\x20\xb5\x28\x17\x55\x9d\x6b\x45\x66\x71\x49\x31\x92\x21\xb5\x5c\x80\x00\x00\x00\xff\xff\x5d\x75\xd5\x13\x6f\x00\x00\x00")
-
-func src_api_file_wren_bytes() ([]byte, error) {
-	return bindata_read(
-		_src_api_file_wren,
+func src_api_file_wren() ([]byte, error) {
+	return bindata_read([]byte{
+		0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x00, 0xff, 0x4a, 0xce,
+		0x49, 0x2c, 0x2e, 0x56, 0x70, 0xcb, 0xcc, 0x49, 0x55, 0xa8, 0xe6, 0x52,
+		0x00, 0x82, 0xb4, 0xfc, 0xa2, 0xd4, 0xcc, 0xf4, 0x3c, 0x85, 0xa0, 0xd4,
+		0xc4, 0x14, 0x8d, 0x34, 0xa0, 0x78, 0x5e, 0x62, 0x6e, 0xaa, 0x26, 0x8a,
+		0x54, 0x78, 0x51, 0x66, 0x49, 0x2a, 0x5c, 0x4e, 0x47, 0x21, 0x25, 0xb1,
+		0x24, 0x51, 0x47, 0xa1, 0x20, 0xb5, 0x28, 0x17, 0x55, 0x9d, 0x6b, 0x45,
+		0x66, 0x71, 0x49, 0x31, 0x92, 0x21, 0xb5, 0x5c, 0x80, 0x00, 0x00, 0x00,
+		0xff, 0xff, 0x5d, 0x75, 0xd5, 0x13, 0x6f, 0x00, 0x00, 0x00,
+	},
 		"src/api/file.wren",
 	)
 }
 
-func src_api_file_wren() (*asset, error) {
-	bytes, err := src_api_file_wren_bytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindata_file_info{name: "src/api/file.wren", size: 111, mode: os.FileMode(420), modTime: time.Unix(1434579647, 0)}
-	a := &asset{bytes: bytes, info:  info}
-	return a, nil
-}
-
-var _src_api_markdown_wren = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x4a\xce\x49\x2c\x2e\x56\xf0\x4d\x2c\xca\x4e\xc9\x2f\xcf\x53\xa8\xe6\x52\x00\x82\xb4\xfc\xa2\xd4\xcc\xf4\x3c\x85\x80\xc4\xa2\xe2\x54\x8d\x5c\xa8\xa4\x26\x57\x2d\x17\x20\x00\x00\xff\xff\x56\x31\x83\x07\x2f\x00\x00\x00")
-
-func src_api_markdown_wren_bytes() ([]byte, error) {
-	return bindata_read(
-		_src_api_markdown_wren,
+func src_api_markdown_wren() ([]byte, error) {
+	return bindata_read([]byte{
+		0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x00, 0xff, 0x4a, 0xce,
+		0x49, 0x2c, 0x2e, 0x56, 0xf0, 0x4d, 0x2c, 0xca, 0x4e, 0xc9, 0x2f, 0xcf,
+		0x53, 0xa8, 0xe6, 0x52, 0x00, 0x82, 0xb4, 0xfc, 0xa2, 0xd4, 0xcc, 0xf4,
+		0x3c, 0x85, 0x80, 0xc4, 0xa2, 0xe2, 0x54, 0x8d, 0x5c, 0xa8, 0xa4, 0x26,
+		0x57, 0x2d, 0x17, 0x20, 0x00, 0x00, 0xff, 0xff, 0x56, 0x31, 0x83, 0x07,
+		0x2f, 0x00, 0x00, 0x00,
+	},
 		"src/api/markdown.wren",
 	)
-}
-
-func src_api_markdown_wren() (*asset, error) {
-	bytes, err := src_api_markdown_wren_bytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindata_file_info{name: "src/api/markdown.wren", size: 47, mode: os.FileMode(420), modTime: time.Unix(1434579407, 0)}
-	a := &asset{bytes: bytes, info:  info}
-	return a, nil
 }
 
 // Asset loads and returns the asset for the given name.
@@ -107,28 +59,9 @@ func src_api_markdown_wren() (*asset, error) {
 func Asset(name string) ([]byte, error) {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	if f, ok := _bindata[cannonicalName]; ok {
-		a, err := f()
-		if err != nil {
-			return nil, fmt.Errorf("Asset %s can't read by error: %v", name, err)
-		}
-		return a.bytes, nil
+		return f()
 	}
 	return nil, fmt.Errorf("Asset %s not found", name)
-}
-
-// AssetInfo loads and returns the asset info for the given name.
-// It returns an error if the asset could not be found or
-// could not be loaded.
-func AssetInfo(name string) (os.FileInfo, error) {
-	cannonicalName := strings.Replace(name, "\\", "/", -1)
-	if f, ok := _bindata[cannonicalName]; ok {
-		a, err := f()
-		if err != nil {
-			return nil, fmt.Errorf("AssetInfo %s can't read by error: %v", name, err)
-		}
-		return a.info, nil
-	}
-	return nil, fmt.Errorf("AssetInfo %s not found", name)
 }
 
 // AssetNames returns the names of the assets.
@@ -141,11 +74,10 @@ func AssetNames() []string {
 }
 
 // _bindata is a table, holding each asset generator, mapped to its name.
-var _bindata = map[string]func() (*asset, error){
+var _bindata = map[string]func() ([]byte, error){
 	"src/api/file.wren": src_api_file_wren,
 	"src/api/markdown.wren": src_api_markdown_wren,
 }
-
 // AssetDir returns the file names below a certain
 // directory embedded in the file by go-bindata.
 // For example if you run go-bindata on data/... and data contains the
@@ -158,17 +90,14 @@ var _bindata = map[string]func() (*asset, error){
 // then AssetDir("data") would return []string{"foo.txt", "img"}
 // AssetDir("data/img") would return []string{"a.png", "b.png"}
 // AssetDir("foo.txt") and AssetDir("notexist") would return an error
-// AssetDir("") will return []string{"data"}.
 func AssetDir(name string) ([]string, error) {
+	cannonicalName := strings.Replace(name, "\\", "/", -1)
+	pathList := strings.Split(cannonicalName, "/")
 	node := _bintree
-	if len(name) != 0 {
-		cannonicalName := strings.Replace(name, "\\", "/", -1)
-		pathList := strings.Split(cannonicalName, "/")
-		for _, p := range pathList {
-			node = node.Children[p]
-			if node == nil {
-				return nil, fmt.Errorf("Asset %s not found", name)
-			}
+	for _, p := range pathList {
+		node = node.Children[p]
+		if node == nil {
+			return nil, fmt.Errorf("Asset %s not found", name)
 		}
 	}
 	if node.Func != nil {
@@ -182,7 +111,7 @@ func AssetDir(name string) ([]string, error) {
 }
 
 type _bintree_t struct {
-	Func func() (*asset, error)
+	Func func() ([]byte, error)
 	Children map[string]*_bintree_t
 }
 var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
@@ -195,50 +124,3 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 		}},
 	}},
 }}
-
-// Restore an asset under the given directory
-func RestoreAsset(dir, name string) error {
-        data, err := Asset(name)
-        if err != nil {
-                return err
-        }
-        info, err := AssetInfo(name)
-        if err != nil {
-                return err
-        }
-        err = os.MkdirAll(_filePath(dir, path.Dir(name)), os.FileMode(0755))
-        if err != nil {
-                return err
-        }
-        err = ioutil.WriteFile(_filePath(dir, name), data, info.Mode())
-        if err != nil {
-                return err
-        }
-        err = os.Chtimes(_filePath(dir, name), info.ModTime(), info.ModTime())
-        if err != nil {
-                return err
-        }
-        return nil
-}
-
-// Restore assets under the given directory recursively
-func RestoreAssets(dir, name string) error {
-        children, err := AssetDir(name)
-        if err != nil { // File
-                return RestoreAsset(dir, name)
-        } else { // Dir
-                for _, child := range children {
-                        err = RestoreAssets(dir, path.Join(name, child))
-                        if err != nil {
-                                return err
-                        }
-                }
-        }
-        return nil
-}
-
-func _filePath(dir, name string) string {
-        cannonicalName := strings.Replace(name, "\\", "/", -1)
-        return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
-}
-
