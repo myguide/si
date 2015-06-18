@@ -28,4 +28,7 @@ extern void class_file_write(WrenVM *vm);
 // Markdown
 extern void class_markdown_parse(WrenVM *vm);
 
+// Strings
+extern void class_strings_contains(WrenVM *vm);
+
 #endif

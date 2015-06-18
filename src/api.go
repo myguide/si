@@ -53,6 +53,20 @@ func src_api_markdown_wren() ([]byte, error) {
 	)
 }
 
+func src_api_strings_wren() ([]byte, error) {
+	return bindata_read([]byte{
+		0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x00, 0xff, 0x4a, 0xce,
+		0x49, 0x2c, 0x2e, 0x56, 0x08, 0x2e, 0x29, 0xca, 0xcc, 0x4b, 0x2f, 0x56,
+		0xa8, 0xe6, 0x52, 0x00, 0x82, 0xb4, 0xfc, 0xa2, 0xd4, 0xcc, 0xf4, 0x3c,
+		0x85, 0xe4, 0xfc, 0xbc, 0x92, 0xc4, 0xcc, 0xbc, 0x62, 0x8d, 0x62, 0x1d,
+		0x85, 0xe2, 0xd2, 0xa4, 0xe2, 0x92, 0x22, 0x4d, 0xae, 0x5a, 0x2e, 0x40,
+		0x00, 0x00, 0x00, 0xff, 0xff, 0x8d, 0x7c, 0xdc, 0xf4, 0x32, 0x00, 0x00,
+		0x00,
+	},
+		"src/api/strings.wren",
+	)
+}
+
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
 // could not be loaded.
@@ -77,6 +91,7 @@ func AssetNames() []string {
 var _bindata = map[string]func() ([]byte, error){
 	"src/api/file.wren": src_api_file_wren,
 	"src/api/markdown.wren": src_api_markdown_wren,
+	"src/api/strings.wren": src_api_strings_wren,
 }
 // AssetDir returns the file names below a certain
 // directory embedded in the file by go-bindata.
@@ -117,9 +132,11 @@ type _bintree_t struct {
 var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 	"src": &_bintree_t{nil, map[string]*_bintree_t{
 		"api": &_bintree_t{nil, map[string]*_bintree_t{
-			"file.wren": &_bintree_t{src_api_file_wren, map[string]*_bintree_t{
-			}},
 			"markdown.wren": &_bintree_t{src_api_markdown_wren, map[string]*_bintree_t{
+			}},
+			"strings.wren": &_bintree_t{src_api_strings_wren, map[string]*_bintree_t{
+			}},
+			"file.wren": &_bintree_t{src_api_file_wren, map[string]*_bintree_t{
 			}},
 		}},
 	}},
