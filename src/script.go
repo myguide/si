@@ -50,13 +50,3 @@ func (s *Script) readApi(paths []string) {
         s.Src = append(api, s.Src...)
     }
 }
-
-// initApiMain appends the main Fn call at the end
-// of the program
-func (s *Script) initApiMain() {
-    main, err := Asset("src/api/main.wren")
-    if err != nil {
-        panic(err)
-    }
-    s.Src = append(s.Src, main...)
-}

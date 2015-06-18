@@ -1,9 +1,3 @@
-[submodule "vendor/src/github.com/hazbo/blackfriday"]
-	path = vendor/src/github.com/hazbo/blackfriday
-	url = https://github.com/hazbo/blackfriday.git
-[submodule "vendor/src/github.com/hazbo/go"]
-	path = vendor/src/github.com/hazbo/go
-	url = https://github.com/hazbo/go.git
 [submodule "vendor/src/github.com/hazbo/cli"]
 	path = vendor/src/github.com/hazbo/cli
 	url = https://github.com/hazbo/cli.git

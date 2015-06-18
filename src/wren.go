@@ -48,44 +48,14 @@ func main() {
                 vm := NewVM()
                 vm.Script = s
                 vm.Script.readApi([]string{
-                    "src/api/file.wren",
-                    "src/api/markdown.wren",
                     "src/api/strings.wren",
                 })
-                //vm.Script.initApiMain()
                 vm.interpret()
             },
         },
     }
 
     app.Run(os.Args)
-}
-
-//export class_markdown_parse
-func class_markdown_parse(vm *C.WrenVM) {
-    m := class.NewMarkdown()
-    wrenReturnString(vm, m.Parse(wrenGetArgumentString(vm, 1)))
-}
-
-//export class_file_exists
-func class_file_exists(vm *C.WrenVM) {
-    f := class.NewFile()
-    wrenReturnBool(vm, f.Exists(wrenGetArgumentString(vm, 1)))
-}
-
-//export class_file_read
-func class_file_read(vm *C.WrenVM) {
-    f := class.NewFile()
-    wrenReturnString(vm, f.Read(wrenGetArgumentString(vm, 1)))
-}
-
-//export class_file_write
-func class_file_write(vm *C.WrenVM) {
-    f := class.NewFile()
-    filename := wrenGetArgumentString(vm, 1)
-    data     := wrenGetArgumentString(vm, 2)
-    perm     := wrenGetArgumentDouble(vm, 3)
-    f.Write(filename, data, perm)
 }
 
 // Strings

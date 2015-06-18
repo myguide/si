@@ -20,14 +20,6 @@
 WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   const char* className, bool isStatic, const char* signature );
 
-// File
-extern void class_file_exists(WrenVM *vm);
-extern void class_file_read(WrenVM *vm);
-extern void class_file_write(WrenVM *vm);
-
-// Markdown
-extern void class_markdown_parse(WrenVM *vm);
-
 // Strings
 extern void class_strings_contains(WrenVM *vm);
 extern void class_strings_has_prefix(WrenVM *vm);
