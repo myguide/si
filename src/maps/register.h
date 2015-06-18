@@ -30,5 +30,6 @@ extern void class_markdown_parse(WrenVM *vm);
 
 // Strings
 extern void class_strings_contains(WrenVM *vm);
+extern void class_strings_has_prefix(WrenVM *vm);
 
 #endif

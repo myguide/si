@@ -96,3 +96,11 @@ func class_strings_contains(vm *C.WrenVM) {
     substr := wrenGetArgumentString(vm, 2)
     wrenReturnBool(vm, obj.Contains(s, substr))
 }
+
+//export class_strings_has_prefix
+func class_strings_has_prefix(vm *C.WrenVM) {
+    obj    := class.NewStrings()
+    s      := wrenGetArgumentString(vm, 1)
+    prefix := wrenGetArgumentString(vm, 2)
+    wrenReturnBool(vm, obj.HasPrefix(s, prefix))
+}

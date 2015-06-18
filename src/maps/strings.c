@@ -23,3 +23,12 @@ int is_strings_contains(const char* className, const char* signature) {
   }
   return 0;
 }
+
+int is_strings_has_prefix(const char* className, const char* signature) {
+  if ( strcmp( className, "Strings" ) == 0 ) {
+    if ( strcmp( signature, "hasPrefix(_,_)" ) == 0 ) {
+      return 1;
+    }
+  }
+  return 0;
+}
