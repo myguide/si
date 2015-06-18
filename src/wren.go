@@ -74,3 +74,11 @@ func class_strings_has_prefix(vm *C.WrenVM) {
     prefix := wrenGetArgumentString(vm, 2)
     wrenReturnBool(vm, obj.HasPrefix(s, prefix))
 }
+
+//export class_strings_has_suffix
+func class_strings_has_suffix(vm *C.WrenVM) {
+    obj    := class.NewStrings()
+    s      := wrenGetArgumentString(vm, 1)
+    suffix := wrenGetArgumentString(vm, 2)
+    wrenReturnBool(vm, obj.HasSuffix(s, suffix))
+}
