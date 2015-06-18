@@ -22,7 +22,7 @@ import "C"
 import (
     "os"
     "fmt"
-    "./classes"
+    "./modules"
     "github.com/hazbo/cli"
 )
 
@@ -62,25 +62,25 @@ func main() {
 
 //export class_markdown_parse
 func class_markdown_parse(vm *C.WrenVM) {
-    m := class.NewMarkdown()
+    m := module.NewMarkdown()
     wrenReturnString(vm, m.Parse(wrenGetArgumentString(vm, 1)))
 }
 
 //export class_file_exists
 func class_file_exists(vm *C.WrenVM) {
-    f := class.NewFile()
+    f := module.NewFile()
     wrenReturnBool(vm, f.Exists(wrenGetArgumentString(vm, 1)))
 }
 
 //export class_file_read
 func class_file_read(vm *C.WrenVM) {
-    f := class.NewFile()
+    f := module.NewFile()
     wrenReturnString(vm, f.Read(wrenGetArgumentString(vm, 1)))
 }
 
 //export class_file_write
 func class_file_write(vm *C.WrenVM) {
-    f := class.NewFile()
+    f := module.NewFile()
     filename := wrenGetArgumentString(vm, 1)
     data     := wrenGetArgumentString(vm, 2)
     perm     := wrenGetArgumentDouble(vm, 3)

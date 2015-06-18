@@ -14,15 +14,13 @@
 
 #include <string.h>
 #include "register.h"
+#include "markdown.h"
 
 WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   const char* className, bool isStatic, const char* signature )
 {
-  if ( strcmp( className, "Markdown" ) == 0 ) {
-    if ( strcmp( signature, "Parse(_)" ) == 0 ) {
-      return class_markdown_parse;
-    }
-  }
+  if (is_markdown_parse(className, signature) == 1) { return class_markdown_parse; }
+
   if ( strcmp( className, "File" ) == 0 ) {
     if ( strcmp( signature, "Exists(_)" ) == 0 ) {
       return class_file_exists;
@@ -36,4 +34,3 @@ WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   }
   return NULL;
 }
-

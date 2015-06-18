@@ -6,9 +6,11 @@ INSTALL_PREFIX=/usr/local
 
 all: wrengo
 
-wrengo: deps wren bindata
+wrengo: deps maps wren bindata
 	mkdir -p build
 	cd src && go build -x -o ../${BUILD_DIR}/${APPLICATION} -v
+	rm -f src/*.c
+	rm -f src/*.h
 
 # Build wren
 wren:
@@ -27,6 +29,9 @@ deps: vendor/
 		touch ${DEPS_FILE} ; \
 	fi;
 
+maps: maps/
+	cp src/maps/* src/
+
 # Generate API bindata
 bindata: src/api
 	go-bindata -o $^.go $^
@@ -35,6 +40,8 @@ clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
 	cd src/wren && make clean
 	rm -f ${DEPS_FILE}
+	rm -f src/*.c
+	rm -f src/*.h
 
 .PHONY: install
 install: ${BUILD_DIR}/${APPLICATION}
