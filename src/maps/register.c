@@ -23,6 +23,7 @@ WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   if (is_strings_contains(className, signature) == 1) { return class_strings_contains; }
   if (is_strings_has_prefix(className, signature) == 1) { return class_strings_has_prefix; }
   if (is_strings_has_suffix(className, signature) == 1) { return class_strings_has_suffix; }
+  if (is_strings_index(className, signature) == 1) { return class_strings_index; }
 
   return NULL;
 }

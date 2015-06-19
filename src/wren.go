@@ -82,3 +82,11 @@ func class_strings_has_suffix(vm *C.WrenVM) {
     suffix := wrenGetArgumentString(vm, 2)
     wrenReturnBool(vm, obj.HasSuffix(s, suffix))
 }
+
+//export class_strings_index
+func class_strings_index(vm *C.WrenVM) {
+    obj := class.NewStrings()
+    s   := wrenGetArgumentString(vm, 1)
+    sep := wrenGetArgumentString(vm, 2)
+    wrenReturnDouble(vm, float64(obj.Index(s, sep)))
+}

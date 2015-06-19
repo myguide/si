@@ -38,3 +38,8 @@ func (s Strings) HasSuffix(st, suffix string) bool {
 	return strings.HasSuffix(st, suffix)
 }
 
+func (s Strings) Index(st, sep string) int {
+	return strings.Index(st, sep)
+}
+
+

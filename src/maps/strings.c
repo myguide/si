@@ -41,3 +41,12 @@ int is_strings_has_suffix(const char* className, const char* signature) {
   }
   return 0;
 }
+
+int is_strings_index(const char* className, const char* signature) {
+  if ( strcmp( className, "Strings" ) == 0 ) {
+    if ( strcmp( signature, "index(_,_)" ) == 0 ) {
+      return 1;
+    }
+  }
+  return 0;
+}

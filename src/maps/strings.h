@@ -18,5 +18,6 @@
 int is_strings_contains(const char* className, const char* signature);
 int is_strings_has_prefix(const char* className, const char* signature);
 int is_strings_has_suffix(const char* className, const char* signature);
+int is_strings_index(const char* className, const char* signature);
 
 #endif
