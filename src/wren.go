@@ -90,3 +90,11 @@ func class_strings_index(vm *C.WrenVM) {
     sep := wrenGetArgumentString(vm, 2)
     wrenReturnDouble(vm, float64(obj.Index(s, sep)))
 }
+
+//export class_strings_last_index
+func class_strings_last_index(vm *C.WrenVM) {
+    obj := class.NewStrings()
+    s   := wrenGetArgumentString(vm, 1)
+    sep := wrenGetArgumentString(vm, 2)
+    wrenReturnDouble(vm, float64(obj.LastIndex(s, sep)))
+}

@@ -42,4 +42,6 @@ func (s Strings) Index(st, sep string) int {
 	return strings.Index(st, sep)
 }
 
-
+func (s Strings) LastIndex(st, sep string) int {
+	return strings.LastIndex(st, sep)
+}

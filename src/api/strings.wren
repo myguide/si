@@ -18,6 +18,7 @@ class Strings {
     foreign hasPrefix(s, prefix)
     foreign hasSuffix(s, suffix)
     foreign index(s, sep)
+    foreign lastIndex(s, sep)
 
     // Empty constructor
     new {
@@ -65,6 +66,12 @@ class Strings {
     // Calls foreign index(_,_) directly on
     // the _string property
     index(sep) {
-        return this.Index(_string, sep)
+        return this.index(_string, sep)
+    }
+
+    // Calls foreign lastIndex(_,_) directly on
+    // the _string property
+    lastIndex(sep) {
+        return this.lastIndex(_string, sep)
     }
 }

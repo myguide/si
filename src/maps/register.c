@@ -24,6 +24,7 @@ WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   if (is_strings_has_prefix(className, signature) == 1) { return class_strings_has_prefix; }
   if (is_strings_has_suffix(className, signature) == 1) { return class_strings_has_suffix; }
   if (is_strings_index(className, signature) == 1) { return class_strings_index; }
+  if (is_strings_last_index(className, signature) == 1) { return class_strings_last_index; }
 
   return NULL;
 }
