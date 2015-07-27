@@ -1,5 +1,8 @@
 # Wrengo
 
+NOTE: This README is a little out of date as per the current build.
+I'll be updating soon.
+
 Wrengo is a simple hobby project of mine that has been built on top of
 [The Wren Programming Language](https://github.com/munificent/wren). Wren is
 an embeddable scripting language that's been written in C. Wrengo, as you may
