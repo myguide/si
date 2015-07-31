@@ -1,4 +1,4 @@
-# Roadmap for Wrengo
+# Roadmap for si
 
 I'm still not very sure what direction I want this project to move in. I think
 in the near future the name of it will change to something else. But in terms
