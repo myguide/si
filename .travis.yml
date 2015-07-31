@@ -5,7 +5,7 @@ go:
   - 1.4
 
 env:
-- GOPATH=$(pwd)/vendor
+  - GOPATH=$(pwd)/vendor
 
 install:
     - go get -u github.com/jteeuwen/go-bindata/...
