@@ -36,6 +36,9 @@ maps: maps/
 bindata: src/api
 	go-bindata -o $^.go $^
 
+test:
+	go test ./src/classes
+
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
 	cd src/wren && make clean
