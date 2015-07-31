@@ -1,8 +1,8 @@
-// wrengo v0.0.1-dev
+// si v0.0.1-dev
 //
 // (c) Harry Lawrence 2015
 //
-// @package wrengo
+// @package si
 // @version 0.0.1-dev
 //
 // @author Harry Lawrence <http://github.com/hazbo>
