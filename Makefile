@@ -1,12 +1,12 @@
 WREN_DIR=src/wren
 BUILD_DIR=build
 DEPS_FILE=vendor/.deps
-APPLICATION=wrengo
+APPLICATION=si
 INSTALL_PREFIX=/usr/local
 
-all: wrengo
+all: si
 
-wrengo: deps maps wren bindata
+si: deps maps wren bindata
 	mkdir -p build
 	cd src && go build -x -o ../${BUILD_DIR}/${APPLICATION} -v
 	rm -f src/*.c
@@ -49,5 +49,5 @@ clean:
 .PHONY: install
 install: ${BUILD_DIR}/${APPLICATION}
 	@install -m 0755 $^ ${INSTALL_PREFIX}/bin
-	@echo "Wrengo has been successfully installed!"
-	@echo "Execute 'wrengo --version' to verify."
+	@echo "si has been successfully installed!"
+	@echo "Execute 'si --version' to verify."
