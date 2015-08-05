@@ -26,6 +26,8 @@ deps: vendor/
 		git submodule init ; \
 		git submodule update ; \
 		git submodule foreach git pull origin master ; \
+		go get -u github.com/myguide/cli ; \
+		go get -u github.com/myguide/fsnotify ; \
 		touch ${DEPS_FILE} ; \
 	fi;
 
@@ -42,6 +44,7 @@ test:
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
 	cd src/wren && make clean
+	rm -rf vendor/pkg vendor/src
 	rm -f ${DEPS_FILE}
 	rm -f src/*.c
 	rm -f src/*.h
