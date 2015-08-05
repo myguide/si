@@ -38,8 +38,10 @@ maps: maps/
 bindata: src/api
 	go-bindata -o $^.go $^
 
-test:
+.PHONY: test
+test: build/si
 	go test ./src/classes
+	@./build/si run ./test/strings_test.wren
 
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
