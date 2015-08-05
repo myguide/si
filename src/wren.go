@@ -23,7 +23,7 @@ import (
     "os"
     "fmt"
     "./classes"
-    "github.com/hazbo/cli"
+    "github.com/myguide/cli"
 )
 
 func main() {

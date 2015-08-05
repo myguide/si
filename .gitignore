@@ -1,3 +1,4 @@
 build/si
+vendor/src
 vendor/pkg
 vendor/.deps
