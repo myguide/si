@@ -26,6 +26,8 @@ deps: vendor/
 		git submodule init ; \
 		git submodule update ; \
 		git submodule foreach git pull origin master ; \
+		go get -u github.com/myguide/cli ; \
+		go get -u github.com/myguide/fsnotify ; \
 		touch ${DEPS_FILE} ; \
 	fi;
 
