@@ -44,6 +44,7 @@ test:
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
 	cd src/wren && make clean
+	rm -rf vendor/pkg vendor/src
 	rm -f ${DEPS_FILE}
 	rm -f src/*.c
 	rm -f src/*.h
