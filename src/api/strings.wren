@@ -20,13 +20,12 @@ class Strings {
     foreign index(s, sep)
     foreign lastIndex(s, sep)
 
-    // Empty constructor
-    new {
+    construct new() {
 
     }
 
     // Constructor with _string initializer
-    new(string) {
+    construct new(string) {
         _string = string
     }
 
