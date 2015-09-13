@@ -40,8 +40,9 @@ bindata: src/api
 
 .PHONY: test
 test: build/si
-	go test ./src/classes
-	@./build/si run ./test/strings_test.wren
+	go test -v ./src/classes
+	@echo "Running Wren implementation tests..."
+	./build/si run ./test/strings_test.wren
 
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}
