@@ -50,6 +50,7 @@ func main() {
                 vm.Script.readApi([]string{
                     "src/api/testing.wren",
                     "src/api/strings.wren",
+                    "src/api/file.wren",
                 })
                 vm.interpret()
             },
@@ -98,4 +99,12 @@ func class_strings_last_index(vm *C.WrenVM) {
     s   := wrenGetArgumentString(vm, 1)
     sep := wrenGetArgumentString(vm, 2)
     wrenReturnDouble(vm, float64(obj.LastIndex(s, sep)))
+}
+
+// File
+//export class_file_read
+func class_file_read(vm *C.WrenVM) {
+    obj := class.NewFile()
+    f   := wrenGetArgumentString(vm, 1)
+    wrenReturnString(vm, obj.Read(f))
 }

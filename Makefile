@@ -43,6 +43,7 @@ test: build/si
 	go test -v ./src/classes
 	@echo "Running Wren implementation tests..."
 	./build/si run ./test/strings_test.wren
+	./build/si run ./test/file_test.wren
 
 clean:
 	rm -f ${BUILD_DIR}/${APPLICATION}

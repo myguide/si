@@ -15,6 +15,7 @@
 #include <string.h>
 #include "register.h"
 #include "strings.h"
+#include "file.h"
 
 WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   const char* className, bool isStatic, const char* signature )
@@ -25,6 +26,9 @@ WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
   if (is_strings_has_suffix(className, signature) == 1) { return class_strings_has_suffix; }
   if (is_strings_index(className, signature) == 1) { return class_strings_index; }
   if (is_strings_last_index(className, signature) == 1) { return class_strings_last_index; }
+
+  // File
+  if (is_file_read(className, signature) == 1) { return class_file_read; }
 
   return NULL;
 }
