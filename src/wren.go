@@ -48,6 +48,7 @@ func main() {
                 vm := NewVM()
                 vm.Script = s
                 vm.Script.readApi([]string{
+                    "src/api/testing.wren",
                     "src/api/strings.wren",
                 })
                 vm.interpret()
