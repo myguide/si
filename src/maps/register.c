@@ -29,6 +29,7 @@ WrenForeignMethodFn findForeignMethods( WrenVM* vm, const char* module,
 
   // File
   if (is_file_read(className, signature) == 1) { return class_file_read; }
+  if (is_file_write(className, signature) == 1) { return class_file_write; }
 
   return NULL;
 }

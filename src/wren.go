@@ -108,3 +108,12 @@ func class_file_read(vm *C.WrenVM) {
     f   := wrenGetArgumentString(vm, 1)
     wrenReturnString(vm, obj.Read(f))
 }
+
+//export class_file_write
+func class_file_write(vm *C.WrenVM) {
+    obj := class.NewFile()
+    f   := wrenGetArgumentString(vm, 1)
+    c   := wrenGetArgumentString(vm, 2)
+    p   := wrenGetArgumentDouble(vm, 3)
+    wrenReturnBool(vm, obj.Write(f, c, p))
+}

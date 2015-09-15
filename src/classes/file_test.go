@@ -16,6 +16,7 @@ package class
 
 import (
 	"testing"
+	"os"
 )
 
 func TestRead(t *testing.T) {
@@ -24,5 +25,16 @@ func TestRead(t *testing.T) {
 
 	if "IO.print(\"Hello, World!\")\n" != res {
 		t.Error("Expected true, got ", res)
+	}
+}
+
+func TestWrite(t *testing.T) {
+	s := NewFile()
+	res := s.Write("test.txt", "Test Content", 755)
+
+	if _, err := os.Stat("test.txt"); err != nil {
+		t.Error("test.txt could not be found, expecting true, got ", res)
+	} else {
+		os.Remove("test.txt")
 	}
 }
