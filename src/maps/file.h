@@ -16,5 +16,6 @@
 #define map_file_h
 
 int is_file_read(const char* className, const char* signature);
+int is_file_write(const char* className, const char* signature);
 
 #endif

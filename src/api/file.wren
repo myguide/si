@@ -15,8 +15,13 @@
 class File {
     // Foreign methods defined in Go
     foreign read(filename)
+    foreign write(filename, contents, perm)
 
     construct new() {
 
+    }
+
+    write(filename, contents) {
+    	return this.write(filename, contents, 755)
     }
 }

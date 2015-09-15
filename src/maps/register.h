@@ -29,5 +29,6 @@ extern void class_strings_last_index(WrenVM *vm);
 
 // File
 extern void class_file_read(WrenVM *vm);
+extern void class_file_write(WrenVM *vm);
 
 #endif

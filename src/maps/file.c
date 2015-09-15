@@ -23,3 +23,12 @@ int is_file_read(const char* className, const char* signature) {
   }
   return 0;
 }
+
+int is_file_write(const char* className, const char* signature) {
+  if ( strcmp( className, "File" ) == 0 ) {
+    if ( strcmp( signature, "write(_,_,_)" ) == 0 ) {
+      return 1;
+    }
+  }
+  return 0;
+}

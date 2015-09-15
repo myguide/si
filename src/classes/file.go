@@ -15,6 +15,7 @@
 package class
 
 import (
+	"os"
 	"io/ioutil"
 )
 
@@ -27,10 +28,17 @@ func NewFile() File {
 }
 
 func (f File) Read(filename string) string {
-	c, _ := ioutil.ReadFile(filename)
+	c, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return ""
+	}
 	return string(c)
 }
 
-func (f File) Write(filename, contents string) {
-	
+func (f File) Write(filename, contents string, perm int) bool {
+	err := ioutil.WriteFile(filename, []byte(contents), os.FileMode(perm))
+	if err != nil {
+		return false
+	}
+	return true
 }
